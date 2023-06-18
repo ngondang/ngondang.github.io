@@ -260,8 +260,25 @@
       once: true,
       duration: 1200
     });
-    $('#loading').hide();
-    $('#content').show();
+    // If all images have loaded
+    var imgs = document.images,
+        len = imgs.length,
+        counter = 0;
+
+    [].forEach.call( imgs, function( img ) {
+        if(img.complete)
+        incrementCounter();
+        else
+        img.addEventListener( 'load', incrementCounter, false );
+    } );
+
+    function incrementCounter() {
+        counter++;
+        if ( counter === len ) {
+            $('#loading').hide();
+            $('#content').show();
+        }
+    }
   </script>
 </body>
 </html>
