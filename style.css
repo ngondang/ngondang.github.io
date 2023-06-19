@@ -40,6 +40,11 @@ html{
         min-height: 100vh;
       }
 
+      #testimoni .card{
+        font-size: 0.9em;
+        text-align: justify;
+      }
+
       @media screen and (max-width:992px){
         .martop{
           margin-top: 2rem !important;
@@ -79,5 +84,9 @@ html{
         .tutorial .card{
           width: 100%; 
           margin-bottom: 1rem;
+        }
+
+        #testimoni .card{
+          margin: 0.5rem;
         }
       }
